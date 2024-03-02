@@ -36,6 +36,7 @@ public class Mates{
         IntStream stream2 = IntStream.range(1, 6); // Genera números del 1 al 5
         System.out.println("\nStream generado con range:");
         stream2.forEach(System.out::println);
+        return stream2;
     }
 
     // 3. Generar un stream de números mediante el método estático iterate de la clase IntStream.
@@ -43,6 +44,7 @@ public class Mates{
         IntStream stream3 = IntStream.iterate(1, n -> n + 2).limit(5); // Genera los primeros 5 números impares empezando por 1
         System.out.println("\nStream generado con iterate:");
         stream3.forEach(System.out::println);
+        return stream3;
     }  
 
     // 4. Generar un stream de números aleatorios utilizando el método doubles de la clase Random.
@@ -51,6 +53,7 @@ public class Mates{
         Stream<Double> stream4 = random.doubles(5).boxed(); // Genera 5 números aleatorios entre 0.0 (inclusive) y 1.0 (exclusive)
         System.out.println("\nStream generado con doubles:");
         stream4.forEach(System.out::println);
+        return stream4;
     } 
     
     //EJERCICIO 15
@@ -80,7 +83,7 @@ public class Mates{
     }
 
     //ejercicio2 apartado6
-    static double desviacion(List<Double> lista)
+    public static double desviacion(List<Double> lista)
     {
         double x = media(lista);
         double media = media(lista.stream().mapToDouble(Double :: doubleValue).map(e -> Math.pow(e - x, 2)).boxed().collect(Collectors.toList()));
@@ -88,7 +91,7 @@ public class Mates{
     }
 
     //ejercicio2 apartado7
-    static int sumaPares(int n)
+    public static int sumaPares(int n)
     {
         int suma = IntStream
         .rangeClosed(1, n)
@@ -117,7 +120,7 @@ public class Mates{
     }
 
     //ejercicio2 apartado10
-     static ArrayList<Integer> listaPar(int n)
+    public static ArrayList<Integer> listaPar(int n)
     {
         ArrayList<Integer> array = new ArrayList<>();
         IntStream.rangeClosed(2, n)
@@ -155,4 +158,5 @@ public class Mates{
 
         return fib_13 / fib_12;
     }
+
 }
