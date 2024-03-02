@@ -1,5 +1,5 @@
 package aplicacion;
-import dominio.Mates;
+import dominio.*;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.stream.Collectors;
@@ -53,6 +53,19 @@ public class Principal {
 
         // Ejercicio 16: Fibonacci
         System.out.println("Proporción áurea: " + Mates.fibonacci());
+
+        // Ejercicio 17
+        Persona p1 = new Persona();
+        p1.calcularEdad();
+        p1.getFechaDeNacimiento();
+        Personas ppersonas = new Personas();
+        ppersonas.elMasJoven();
+        ppersonas.calcularSumaEdades();
+        ppersonas.calcularEdadMinima();
+        ppersonas.calcularMediaDeEdad();
+        
+
+
     }
 }
 
